@@ -33,6 +33,7 @@ namespace CoffeeGiver
             });
 
 
+            services.AddSingleton<Waiter>();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
 

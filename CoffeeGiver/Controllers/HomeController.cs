@@ -10,6 +10,11 @@ namespace CoffeeGiver.Controllers
 {
     public class HomeController : Controller
     {
+        private Waiter _waiter;
+        public HomeController(Waiter waiter)
+        {
+            _waiter = waiter;
+        }
         public IActionResult Index(string email = null)
         {
             if (string.IsNullOrWhiteSpace(email))
