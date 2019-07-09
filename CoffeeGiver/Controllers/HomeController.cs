@@ -23,14 +23,13 @@ namespace CoffeeGiver.Controllers
             }
             else
             {
-                //we have a new waiter to serve our request
-                Waiter waiter = new Waiter();
+            
 
-                //we have a new cup from our new waiter
-                Cup newCup = waiter.ProvideCup();
+                //we are getting a new cup from our injected waiter
+                Cup newCup = _waiter.ProvideCup();
 
-                //our waiter now fills the new cup with coffee
-                waiter.FillCup(newCup);
+                //our injecter waiter now fills the new cup with coffee
+                _waiter.FillCup(newCup);
 
                 //send filled cup to users email 
                 return Content($"Yay! Coffee sent to {email}");
